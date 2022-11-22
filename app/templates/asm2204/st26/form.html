@@ -1,0 +1,68 @@
+{% extends "asm2204/st26/base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="col-md-7 col-lg-8">
+        <form class="needs-validation" novalidate="" action='{{ selfurl }}/add' method=POST>
+            <input type=hidden name=id value={{it.id}}>
+
+            <select name=type id="addFormType" class="form-select" onchange="Change_pole()">
+                <option value="Car">Car</option>
+                <option value="Old_Car">Old_Car</option>
+            </select>
+
+            <div class="col-sm-6">
+                <label for="firstName" class="form-label">name_brand</label>
+                <input type="text" class="form-control" id="name_brand" name=name_brand placeholder="" value={{it.name_brand}}>
+                <div class="invalid-feedback">
+                    Valid first brand is required.
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label for="Age" class="form-label">VIN</label>
+                <input type="text" class="form-control" id="VIN" name=VIN value={{it.VIN}}>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="Age" class="form-label"> HP </label>
+                <input type="text" class="form-control" id="hp" name=hp value={{it.hp}}>
+            </div>
+
+            <div class="col-sm-6" id="addFormAgeField" style="display: none">
+                <label for="Status" class="form-label">Age</label>
+                <input type="text" class="form-control" id="age" name=age placeholder="" value={{it.age}}>
+            </div>
+
+            <button class="w-100 btn btn-primary btn-lg" type="submit" value="Ok">Add</button>
+
+    </form>
+</div>
+</div>
+{% endblock %}
+
+{#{% block content %}#}
+{##}
+{#<form action = '{{selfurl}}/add' method=POST>#}
+{##}
+{#<input type=hidden name=id value={{it.id}}>#}
+{#name_brand:<input type=text name=name value="{{it.name_brand}}"><br>#}
+{#VIN:<input type=text name=age value={{it.VIN}}><br>#}
+{#HP:<input type=text name=rate value={{it.hp}}><br>#}
+{#Age:<input type=text name=stipend value={{it.age}}><br>#}
+{#<br><input type=submit value="Ok">#}
+{#<input type="checkbox" id="agree" onclick="myFunction()"> Old_car#}
+{##}
+{#<script>#}
+{#function myFunction() {#}
+{#  var checkBox = document.getElementById("agree");#}
+{#  var text = document.getElementById("age");#}
+{#  if (checkBox.checked == true){#}
+{#      text.readOnly = 0;#}
+{#  } #}
+{#  else {#}
+{#     text.readOnly = 1;#}
+{#    }#}
+{#</script>#}
+{#</form>#}
+
+{#{% endblock %}#}

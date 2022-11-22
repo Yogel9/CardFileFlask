@@ -1,2 +1,2 @@
-start python lab3.py
+start python lab4.py
 start http://localhost:5000/

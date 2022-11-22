@@ -2,13 +2,13 @@ from .user import User
 
 
 def get_age_limit(age):
-    if int(age) >= 18:
+    if age > "18":
         return "18+"
-    elif int(age) >= 16:
+    elif age > "16":
         return "16+"
-    elif int(age) >= 12:
+    elif age > "12":
         return "12+"
-    elif int(age) >= 6:
+    elif age > "6":
         return "6+"
     else:
         return "0+"
@@ -26,13 +26,14 @@ class Reader(User):
 
     def get_dict(self):
         return {"type": self.type,
-                "Name": self.name,
-                "Surname": self.surname,
-                "Age": self.age,
-                "Age_limit": self.age_limit}
+                "name": self.name,
+                "surname": self.surname,
+                "age": self.age,
+                "age_limit": self.age_limit,
+                }
 
     def __str__(self):
-        return f"<Reader> {self.name}| {self.surname}| {self.age} | {self.age_limit}"
+        return f"{self.name}| {self.surname}| Читатель"
 
     def get_user_info(self):
         print(f"~Читатель~\nИмя: {self.name} \nФамилия: {self.surname} \nВозраст:{self.age}\n"

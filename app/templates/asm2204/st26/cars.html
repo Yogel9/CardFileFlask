@@ -1,0 +1,16 @@
+{% extends "asm2204/st26/base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex p-2">
+        {% for it in items %}
+        {% include "asm2204/st26/item.html" ignore missing %}
+        <p></p>
+        {% else %}
+        Cars is empty
+        {% endfor %}
+
+        {% include "asm2204/st26/add.html" ignore missing %}
+    </div>
+</div>
+{% endblock %}
