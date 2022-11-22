@@ -1,8 +1,10 @@
-from input_output.AbClass import MyAbstract
-from model import *
+
+from asm2204.st08.model import *
+from asm2204.st08.model.reader import Reader
+from asm2204.st08.model.writer import Writer
 
 
-class Console(MyAbstract):
+class Console:
     object_type = ["Писатель", "Читатель"]
 
     def __init__(self):

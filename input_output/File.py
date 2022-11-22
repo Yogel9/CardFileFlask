@@ -1,14 +1,11 @@
 import pickle
 
-from input_output.AbClass import MyAbstract
 
-
-class File(MyAbstract):
-
+class File:
     def __init__(self):
         pass
 
-    def input(self, g):
+    def input(self):
         with open('data.pickle', 'rb') as f:
             return pickle.load(f)
 

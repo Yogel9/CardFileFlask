@@ -10,7 +10,7 @@ class Group:
 
 	def add_person(self, person):
 		self.person_list.append(person)
-	
+
 	def edit_person(self, person_id, person):
 		self.person_list[int(person_id)] = person
 

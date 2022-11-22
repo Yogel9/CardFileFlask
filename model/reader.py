@@ -24,16 +24,8 @@ class Reader(User):
         self.age = age
         self.age_limit = get_age_limit(age)
 
-    def get_dict(self):
-        return {"type": self.type,
-                "name": self.name,
-                "surname": self.surname,
-                "age": self.age,
-                "age_limit": self.age_limit,
-                }
-
     def __str__(self):
-        return f"{self.name}| {self.surname}| Читатель"
+        return f"{self.name}| {self.surname}| {self.type}"
 
     def get_user_info(self):
         print(f"~Читатель~\nИмя: {self.name} \nФамилия: {self.surname} \nВозраст:{self.age}\n"
