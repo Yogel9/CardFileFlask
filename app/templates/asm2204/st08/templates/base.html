@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('.static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('.static', filename='css/form.css') }}">
     {% block scripts %}
     {% endblock %}
     <!-- CSS only -->
@@ -13,16 +13,16 @@
     <div class="header">
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link active" href="{{url_for('index')}}">Главная</a>
+                <a class="nav-link active" href="{{url_for('.index')}}">Главная</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('add_person')}}">Добавить объект</a>
+                <a class="nav-link" href="{{url_for('.add_person')}}">Добавить объект</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('save_file')}}">Сохранить в файл</a>
+                <a class="nav-link" href="{{url_for('.save_file')}}">Сохранить в файл</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url_for('upload_file')}}">Загрузить из файла</a>
+                <a class="nav-link" href="{{url_for('.upload_file')}}">Загрузить из файла</a>
             </li>
         </ul>
     </div>

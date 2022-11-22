@@ -10,8 +10,15 @@ class Writer(User):
         self.experience = experience
         self.salary = int(experience) * 1000
 
+    def get_dict(self):
+        return {"type": self.type,
+                "Name": self.name,
+                "Surname": self.surname,
+                "Experience": self.experience,
+                "Salary": self.salary}
+
     def __str__(self):
-        return f"{self.name}| {self.surname}| {self.type}"
+        return f"<Writer> {self.name}| {self.surname}| {self.type}| {self.salary}"
 
     def get_user_info(self):
         print(f"~Писатель~\nИмя: {self.name} \nФамилия: {self.surname} "

@@ -1,6 +1,4 @@
-﻿from .reader import Reader
-from .writer import Writer
-
+﻿
 
 class Group:
 
@@ -29,6 +27,7 @@ class Group:
 			for i, person in enumerate(self.person_list):
 				print(i, str(person))
 		print("<------------------------------------>\n")
+
 			# if isinstance(person, Reader):
 			# 	person.study()
 			# elif isinstance(person, Writer):

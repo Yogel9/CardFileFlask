@@ -1,7 +1,4 @@
-
-from asm2204.st08.model import *
-from asm2204.st08.model.reader import Reader
-from asm2204.st08.model.writer import Writer
+from app.asm2204.st08 import Writer, Reader
 
 
 class Console:

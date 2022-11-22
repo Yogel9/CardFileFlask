@@ -8,17 +8,8 @@ class FlaskForm:
     def input(self, form_dict):
         self.input_dict = form_dict
 
-    def get_type(self):
-        return self.input_dict["type"]
-
-    def get_name(self):
-        return self.input_dict["Surname"]
-
-    def get_experience(self):
-        return self.input_dict["Experience"]
-
-    def get_age(self):
-        return self.input_dict["Age"]
+    def get_input_data(self):
+        return self.input_dict
 
     def clear_for_output(self):
         self.output_list = []
