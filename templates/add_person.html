@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block script %}
+ <title>{{context.title}}</title>
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="form-card">
+    <form class="form" method="POST">
+        <br>
+        <h1>Новый объект</h1>
+        <div class="field-container">
+            <div class="form-field">
+                <div class="field-wrapper">
+                    <label class="field-title">Фамилия</label>
+                    <input type="text"  name="Surname" class="field-input" placeholder="Введите фамилию">
+                </div>
+            </div>
+            <div class="form-field">
+                <div class="field-wrapper">
+                    <label class="field-title">Имя</label>
+                    <input type="text" name="Name" class="field-input" placeholder="Введите имя">
+                </div>
+            </div>
+            <div class="form-field">
+                <div class="field-wrapper">
+                    <label class="field-title">Тип объекта</label>
+                    <select name="type" class="field-input">
+                        {% for type in context.obj_type %}
+                        <option>{{type}}</option>
+                        {% endfor  %}
+                    </select>
+                </div>
+            </div>
+            <div class="form-field">
+                <div class="field-wrapper">
+                    <label id="obj_label1" class="field-title">Стаж</label>
+                    <input id="obj_number1" type="number" name="Experience" class="field-input" placeholder="Введите стаж писателя">
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary mb-3">Сохранить</button>
+        </div>
+
+    </form>
+</div>
+
+<script src="{{ url_for('static', filename='js/add_person.js') }} "></script>
+{% endblock %}

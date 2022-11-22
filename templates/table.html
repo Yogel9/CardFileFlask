@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+{% block card_table %}
+<div class="container">
+ <table class="table_sort table table-bordered table-hover table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Тип</th>
+            <th>Возраст</th>
+            <th>РСВР</th>
+            <th>Стаж</th>
+            <th>Зарплата</th>
+            <th>Редактировать</th>
+            <th>Удалить</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for person in context.person_list %}
+        <tr>
+            <td> {{person[0]}} </td>
+            <td> {{ person[1].surname }}  </td>
+            <td> {{ person[1].name }} </td>
+            <td> {{ person[1].type }}</td>
+            {%if person[1].type == "Читатель" %}
+            <td> {{ person[1].age  }} </td>
+            <td> {{ person[1].age_limit }} </td>
+            <td> - </td>
+            <td> - </td>
+            {% elif person[1].type == "Писатель" %}
+            <td> - </td>
+            <td> - </td>
+            <td> {{ person[1].experience }} </td>
+            <td> {{ person[1].salary }} P </td>
+            {% endif %}
+            <td> <a href="/edite_person/{{person[0]}}" type="button"> Редактировать </a> </td>
+            <td> <a href="/del_person/{{person[0]}}" type="button"> Удалить </a> </td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+<script src="{{ url_for('static', filename='js/table.js') }} "></script>
+{% endblock %}

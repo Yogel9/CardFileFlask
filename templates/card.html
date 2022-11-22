@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block card_table %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/card.css') }}">
+
+
+<br>
+{% for data_dict in context.person_list %}
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="{{ url_for('static', filename='img/person_img.jpeg') }}" alt="Card image cap">
+      <div class="card-body">
+        {% for key,value in data_dict[1].items() %}
+            <label> {{key}}: {{value}} </label> <br>
+        {% endfor %}
+      </div>
+
+        <div class="card-footer">
+            <a href="/edite_person/{{data_dict[0]}}" type="button" class="btn btn-primary btn-block"> Редактировать </a>
+        </div>
+        <div class="card-footer">
+            <a href="/del_person/{{data_dict[0]}}" type="button" class="btn btn-danger btn-block"> Удалить </a>
+        </div>
+    </div>
+{% endfor %}
+
+
+{% endblock %}
